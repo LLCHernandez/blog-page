@@ -1,3 +1,100 @@
 body {
     margin: 0;
   }
+
+.top {
+  background-color: #F6F6F2;
+  overflow: hidden;
+}
+
+.top a {
+  float: left;
+  color: #6FB3B8;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.top a:hover {
+  background-color: #C2EDCE;
+  color: black;
+}
+
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.top input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: inset;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.top .login-container button {
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #F6F6F2;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color: #6FB3B8;
+}
+
+.top .login-container button:hover {
+  background: #C2EDCE;
+  color: black;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #BADFE7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .top .login-container {
+    float: none;
+  }
+  .top a, .top input[type=text], .top .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .top input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
