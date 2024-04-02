@@ -1,38 +1,25 @@
-const formEl = $('#guestbook-form');
-const nameInputEl = $('#name-input');
-const commentInputEl = $('#comment-input');
+const userEl = $('#subbut');
+const titleEl = $('#title');
+const contentEl = $('#content');
 const guestBookDisplayEl = $('#guest-book-display');
-const printGuestData = function (name, comment) {
-  const cardColumnEl = $('<div>');
-  cardColumnEl.addClass('col-12 col-sm-4 col-md-3');
-  const cardEl = $('<div>');
-  // TODO: add another class for `custom-card`
-  cardEl.addClass('card h-100');
-  cardEl.appendTo(cardColumnEl);
-  // TODO: add another class for `custom-card-header`
-  const cardName = $('<h5>')
-    .addClass('card-header')
-    .text(name);
-  cardName.appendTo(cardEl);
-  const cardBodyEl = $('<div>');
-  cardBodyEl.addClass('card-body');
-  cardBodyEl.appendTo(cardEl);
-  const cardComment = $('<p>').addClass('card-text').text(comment);
-  cardComment.appendTo(cardBodyEl);
-  guestBookDisplayEl.append(cardColumnEl);
+
+const postBlog = function () {
+  
 };
+
 const handleFormSubmit = function (event) {
   event.preventDefault();
-  const nameInput = nameInputEl.val();
-  const commentInput = commentInputEl.val();
-  if (!nameInput || !commentInput) {
+  const title = titleEl.val();
+  const content = contentEl.val();
+  const user = userEl.val();
+  if (!user || !title || !content) {
     console.log('You need to fill out the form!');
     return;
   }
-  // print card with guest data
-  printGuestData(nameInput, commentInput);
-  // reset form
-  nameInputEl.val('');
-  commentInputEl.val('');
+  postBlog(title, content, user);
+  userEl.val('');
+  titleEl.val('');
+  contentEl.val('');
 };
-formEl.on('submit', handleFormSubmit);
+
+userEl.addEventListener('submit', handleFormSubmit);
