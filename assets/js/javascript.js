@@ -1,25 +1,51 @@
-const userEl = $('#subbut');
-const titleEl = $('#title');
-const contentEl = $('#content');
-const guestBookDisplayEl = $('#guest-book-display');
+const btnEl = document.querySelector('#btn')
+const userEl = document.querySelector('#username');
+const titleEl = document.querySelector('#title');
+const contentEl = document.querySelector('#content');
+const usserEl = document.querySelector('#usser');
+const ttitleEl = document.querySelector('#ttitle');
+const ccontentEl = document.querySelector('#ccontent');
 
+function displayMessage(type, message) {
+  msgDiv.textcontent = message;
+  msgDiv.setAttribute('class', type);
+}
+
+
+postBlog();
 const postBlog = function () {
-  
-};
+  const usser = localStorage.getItem('username');
+  const ttitle = localStorage.getItem('title');
+  const ccontentInfo = localStorage.getItem('content');
 
-const handleFormSubmit = function (event) {
-  event.preventDefault();
-  const title = titleEl.val();
-  const content = contentEl.val();
-  const user = userEl.val();
-  if (!user || !title || !content) {
-    console.log('You need to fill out the form!');
+  if (!usser || !ttitle || ccontentInfo) {
     return;
   }
-  postBlog(title, content, user);
-  userEl.val('');
-  titleEl.val('');
-  contentEl.val('');
+  
+  usserEl.textContent = usser;
+  ttitleEl.textContent = ttitle;
+  ccontentEl.textContent = ccontentInfo;
+
 };
 
-userEl.addEventListener('submit', handleFormSubmit);
+btnEl.addEventListener('sumbit', function (event) {
+  event.preventDefault();
+
+  const user = userEl.value;
+  const title = titleEl.value;
+  const contentInfo = contentEl.value;
+  
+  if (user === '') {
+    displayMessage('error', 'Username cannot be blank');
+  } else if (title === '') {
+    displayMessage('error', 'Title cannot be blank');
+  } else if (contentInfo === '') {
+    displayMessage('error', 'Content cannot be blank');
+  } else {
+    displayMessage('success', 'Post created successfully');
+
+    localStorage.setItem('username', user);
+    localStorage.setItem('title', title);
+    localStorage.setItem('content', contentInfo);
+}
+});

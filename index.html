@@ -25,15 +25,22 @@
   <!--Form for Username up top, mid is "post name", bottom is content-->
   <section class="container">
     <form>
-      <label for="username">Known Name</label>
-      <input type="text" id="username" name="firstname" placeholder="Whats your name?">
-      <label for="title">Blog Title</label>
-      <input type="text" id="title" name="lastname" placeholder="Name your post">
-      <label for="content">Post Content</label>
-      <input type="text" id="content" name="content" placeholder="Write Your post here!">
-      <input type="submit" value="Submit">
+      <div>
+        <label for="username">Username</label>
+        <input type="text"  name="firstname" id="username" placeholder="Whats your username"/>
+      </div>
+      <div>
+        <label for="title">Blog Title</label>
+        <input type="text" id="title" name="blogTitle" placeholder="Label your post">
+      </div>
+      <div>
+        <label for="content">Blog Content</label>
+        <input type="text" id="content" name="content" placeholder="Write Your post here!">
+      </div>
+      <button id="btn" type="submit">Submit</button>
     </form>
   </section>
   <!--Footer "Thanks for sharing!"-->
+  <script src="./assets/js/javascript.js"></script>
 </body>
 </html>
