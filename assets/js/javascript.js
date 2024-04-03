@@ -4,28 +4,19 @@ const titleEl = document.querySelector('#title');
 const contentEl = document.querySelector('#content');
 const usserEl = document.querySelector('#usser');
 const ttitleEl = document.querySelector('#ttitle');
-const ccontentEl = document.querySelector('#ccontent');
+const ccontentEl = document.querySelector('#ccontents');
 
 function displayMessage(type, message) {
   msgDiv.textcontent = message;
   msgDiv.setAttribute('class', type);
 }
 
-
-postBlog();
 const postBlog = function () {
   const usser = localStorage.getItem('username');
   const ttitle = localStorage.getItem('title');
-  const ccontentInfo = localStorage.getItem('content');
-
-  if (!usser || !ttitle || ccontentInfo) {
-    return;
-  }
+  const ccontentInfo = localStorage.getItem('contents');
   
-  usserEl.textContent = usser;
-  ttitleEl.textContent = ttitle;
-  ccontentEl.textContent = ccontentInfo;
-
+  usser.createElement()
 };
 
 btnEl.addEventListener('sumbit', function (event) {
@@ -46,6 +37,6 @@ btnEl.addEventListener('sumbit', function (event) {
 
     localStorage.setItem('username', user);
     localStorage.setItem('title', title);
-    localStorage.setItem('content', contentInfo);
+    localStorage.setItem('contents', contentInfo);
 }
 });

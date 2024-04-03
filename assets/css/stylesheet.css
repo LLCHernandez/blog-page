@@ -2,6 +2,16 @@ body {
     margin: 0;
   }
 
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #F6F6F2;
+    color: #6FB3B8;
+    text-align: center;
+  }
+
 .top {
   background-color: #F6F6F2;
   overflow: hidden;
@@ -31,6 +41,7 @@ body {
   margin-top: 8px;
   font-size: 17px;
   border: inset;
+  border-color: #6FB3B8;
   width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
 }
 
@@ -55,15 +66,20 @@ input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  border: inset;
+  border-color: #6FB3B8;
 }
 
-input[type=submit] {
+#contents {
+
+}
+
+#btn {
   width: 100%;
-  background-color: #BADFE7;
-  color: white;
+  background-color: #F6F6F2;
+  color: #6FB3B8;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -71,8 +87,9 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+#btn:hover {
   background-color: #C2EDCE;
+  color: black;
 }
 
 div.container {
