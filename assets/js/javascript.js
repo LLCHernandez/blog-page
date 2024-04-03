@@ -5,21 +5,14 @@ const contentEl = document.querySelector('#content');
 const usserEl = document.querySelector('#usser');
 const ttitleEl = document.querySelector('#ttitle');
 const ccontentEl = document.querySelector('#ccontents');
+const msgDiv = document.querySelector('#msg');
 
 function displayMessage(type, message) {
-  msgDiv.textcontent = message;
+  msgDiv.textContent = message;
   msgDiv.setAttribute('class', type);
 }
 
-const postBlog = function () {
-  const usser = localStorage.getItem('username');
-  const ttitle = localStorage.getItem('title');
-  const ccontentInfo = localStorage.getItem('contents');
-  
-  usser.createElement()
-};
-
-btnEl.addEventListener('sumbit', function (event) {
+btnEl.addEventListener('click', function (event) {
   event.preventDefault();
 
   const user = userEl.value;
@@ -28,15 +21,22 @@ btnEl.addEventListener('sumbit', function (event) {
   
   if (user === '') {
     displayMessage('error', 'Username cannot be blank');
+    return;
   } else if (title === '') {
     displayMessage('error', 'Title cannot be blank');
+    return;
   } else if (contentInfo === '') {
     displayMessage('error', 'Content cannot be blank');
+    return;
   } else {
     displayMessage('success', 'Post created successfully');
 
     localStorage.setItem('username', user);
     localStorage.setItem('title', title);
     localStorage.setItem('contents', contentInfo);
+    displayMessage();
 }
+
+window.location.href="posts.html"
+
 });
